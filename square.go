@@ -1,5 +1,7 @@
 package square
 
+import "math"
+
 type Point struct {
 	x, y int
 }
@@ -9,14 +11,40 @@ type Square struct {
 	a     uint
 }
 
-func (receiver) End() Point {
-	// implement me
+func (inp Square) End() Point {
+	var (
+		sPtr Point
+		side int
+		ePtr Point
+	)
+	sPtr = inp.start
+	side = int(inp.a)
+	ePtr.x = sPtr.x + side
+	ePtr.y = sPtr.y + side
+
+	return ePtr
+
 }
 
-func (receiver) Area() uint {
-	// implement me
+func (input Square) Area() uint {
+	var (
+		side uint
+		area uint
+	)
+
+	side = input.a
+	area = uint(math.Pow(float64(side), 2))
+
+	return area
 }
 
-func (receiver) Perimeter() uint {
-	// implement me
+func (input Square) Perimeter() uint {
+	var (
+		side uint
+		per  uint
+	)
+	side = input.a
+	per = side * 4
+
+	return per
 }
